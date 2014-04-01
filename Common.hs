@@ -1,11 +1,12 @@
 module Common where
 
-divides :: Integer -> Integer -> Bool
 n `divides` k = (k `mod` n) == 0
 
-divisibleBy :: Integer -> Integer -> Bool
 divisibleBy = flip divides
 
+isPalindrome n = (show n) == (reverse $ show n)
+
+printSolution :: (Integer -> Integer) -> Integer -> IO ()
 printSolution f n = do
   putStr $ show $ f n
   putStr " (N="
