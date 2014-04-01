@@ -12,13 +12,7 @@ want n = (3 `divides` n) || (5 `divides` n)
 solve :: Integer -> Integer
 solve n = sum [x | x <- [1..n-1], want x]
 
-printSolution n = do
-  putStr $ show $ solve n
-  putStr " (N="
-  putStr $ show n
-  putStrLn ") "
-
 main = do
   putStrLn $ task
-  printSolution 10
-  printSolution 1000
+  printSolution solve 10
+  printSolution solve 1000
