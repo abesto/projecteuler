@@ -21,7 +21,4 @@ primeFactors x pps@(p:ps)
   | p `divides` x = p:(primeFactors (x `div` p) pps)
   | otherwise     = primeFactors x ps
 
-main = do
-  putStrLn task
-  printSolution solve 10
-  printSolution solve 20
+main = runSolution task solve [10, 20]

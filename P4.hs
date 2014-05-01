@@ -9,7 +9,4 @@ solve n = foldl max 0 [a*b | a <- divisorCandidates, b <- divisorCandidates, isP
           where maxDivisor = (10 ^ n) - 1
                 divisorCandidates = [2..maxDivisor]
 
-main = do
-  putStrLn task
-  printSolution solve 2
-  printSolution solve 3
+main = runSolution task solve [2, 3]

@@ -11,3 +11,8 @@ printSolution f n = do
   putStr " (N="
   putStr $ show n
   putStrLn ") "
+
+runSolution :: (Show a, Show b) => String -> (a -> b) -> [a] -> IO ()
+runSolution task solve inputs = do
+  putStrLn task
+  mapM_ (printSolution solve) inputs

@@ -11,8 +11,4 @@ task = unlines ["The sum of the squares of the first ten natural numbers is,"
 solve n = ((sum xs) ^ 2) - (sum $ map (^2) xs)
           where xs = [1..n]
 
-main = do
-  putStrLn task
-  printSolution solve 10
-  printSolution solve 100
-  putStrLn "Maybe I'm missing something, but this is plenty fast."
+main = runSolution task solve [10, 100]
